@@ -1,0 +1,71 @@
+﻿@model HomeViewModel
+
+@{
+    ViewData["Title"] = "Resumo do clima";
+}
+
+<div class="contaner pt-2 pb-3">
+    <div class="row">
+        <h2 class="title text-center pt-3 pb-2 text-black">Resumo do Clima de hoje</h2>
+        @*Cidades mais quentes*@
+        <div class="col-md-6 col-12 hottest-cities-content">
+            <div class="card w-100 hover-top my-2" style="width: 18rem;">
+                <div class="card-body">
+                    <i class="icon-sun icon-card float-end"></i>
+                    <h5 class="card-title text-black">Cidades mais quentes hoje</h5>
+                    <h6 class="card-subtitle mb-4 text-muted">Top 3 cidades mais quentes</h6>
+                    <ul class="list-group list-group-flush">
+                    @{ int i = 1; }
+                    @foreach(var topHot in Model.listTopHot)
+                    {
+                        ViewData["count"] = i;
+                        <partial name="_TopHotCities" for="@topHot" view-data="ViewData"/>
+                        i++;
+                    }
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        @*Cidades mais frias*@
+        <div class="col-md-6 col-12 colder-cities-content">
+            <div class="card w-100 hover-top my-2" style="width: 18rem;">
+                <div class="card-body">
+                    <i class="icon-snow icon-card float-end"></i>
+                    <h5 class="card-title text-black">Cidades mais frias hoje</h5>
+                    <h6 class="card-subtitle mb-4 text-muted">Top 3 cidades mais frias</h6>
+                    <ul class="list-group list-group-flush">
+                    @{ int y = 1; }
+                    @foreach(var topCold in Model.listTopCold)
+                    {
+                        ViewData["count"] = y;
+                        <partial name="_TopHotCities" for="@topCold" view-data="ViewData"/>
+                        y++;
+                    }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="contaner pt-3 pb-5">
+    <div class="row">
+        <h4 class="title text-center pt-3 pb-2 text-black">Veja o clima da sua cidade dos próximos dias</h4>
+        <h6 class="card-subtitle mt-4 pb-2 text-muted">Selecione uma cidade abaixo</h6>
+        <div class="col-12 pb-3 hottest-cities-content">
+            <select class="form-select" id="single-select-field" name="city" data-placeholder="Selecione uma cidade">
+                <option></option>
+                @foreach(var cities in Model.listCity)
+                {
+                    <option value="@cities.CidadeId">@cities.Nome</option>
+                }
+            </select>
+        </div>
+
+        <div class="container" id="content-previsao-week"></div>
+
+    </div>
+</div>
+

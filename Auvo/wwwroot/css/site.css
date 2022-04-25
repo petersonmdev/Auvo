@@ -1,0 +1,205 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #7d7987;
+    background-color: #fff;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    transition: color 0.3s, background-color 0.3s;
+    margin-bottom: 60px;
+}
+
+.card {
+    box-shadow: 0px 39px 80px -6px rgb(0 0 0 / 30%);
+    border-radius: 15px;
+    background: #fff;
+    border:none;
+}
+
+.hottest-cities-content .card {
+    box-shadow: 0px 39px 80px -6px rgb(255 206 134 / 30%);
+    border: 2px solid rgb(254 155 8 / 30%);
+}
+
+.hottest-cities-content .icon-card {
+    font-size: 35px !important;
+    color: #ff9b07;
+}
+
+.hottest-cities-content .hover-top:hover, .hottest-cities-content .hover-top:focus {
+    -webkit-box-shadow: 0.5rem 0.5rem 1.5rem rgb(255 159 128 / 10%) !important;
+    box-shadow: 0.5rem 0.5rem 1.5rem rgb(255 159 128 / 10%) !important;
+}
+
+.colder-cities-content .card {
+    box-shadow: 0px 39px 80px -6px rgb(128 196 255 / 30%);
+    border: 2px solid rgb(128 196 255 / 30%);
+}
+
+.colder-cities-content .icon-card {
+    font-size: 35px !important;
+    color: #5c99ff;
+}
+
+.colder-cities-content .hover-top:hover, .colder-cities-content .hover-top:focus {
+    -webkit-box-shadow: 0.5rem 0.5rem 1.5rem rgb(96 181 255 / 10%) !important;
+    box-shadow: 0.5rem 0.5rem 1.5rem rgb(96 181 255 / 10%) !important;
+}
+
+.icon-card {
+    font-size: 35px !important;
+    color: #ff9b07;
+}
+
+
+.hover-top:hover, .hover-top:focus {
+    -webkit-transform: translateY(-0.125rem) translateZ(0);
+    transform: translateY(-0.125rem) translateZ(0);
+    -webkit-box-shadow: 0.5rem 0.5rem 1.5rem rgb(22 28 45 / 10%) !important;
+    box-shadow: 0.5rem 0.5rem 1.5rem rgb(22 28 45 / 10%) !important;
+}
+
+.hover-top {
+    -webkit-transform: translateY(0) translateZ(0);
+    transform: translateY(0) translateZ(0);
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+/* página sobre */
+
+
+.side_linkrapido {
+    width: 40px;
+    position: fixed;
+    bottom: 0px;
+    left: 40px;
+    right: auto;
+    z-index: 10;
+    color: #749cc0;
+}
+
+.side_linkrapido[orientation="right"] {
+    width: 40px;
+    position: fixed;
+    bottom: 0px;
+    right: 40px;
+    left: auto;
+    z-index: 10;
+    color: #749cc0;
+}
+
+.social_link {
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+.social_link li a {
+    padding: 10px !important;
+    color: #5f8bff;
+}
+
+.social_link li button {
+    padding: 8px !important;
+}
+
+.side_linkrapido[orientation="right"] .social_link li a:last-child,
+.side_linkrapido[orientation="right"] .social_link li button:last-child {
+    writing-mode: vertical-rl;
+}
+
+.btn-acessibility {
+    padding: 7px !important;
+    line-height: 7px;
+    margin-right: 15px !important;
+}
+
+    .btn-acessibility:after {
+        display: none;
+    }
+
+.social_link li:last-of-type {
+    margin-bottom: 20px;
+}
+
+.social_link li a:hover,
+.social_link li button:hover {
+    transform: translateY(-3px);
+}
+
+.social_link li a:focus,
+.social_link li button:focus {
+    outline: 2px dashed #5f8bff;
+    outline-offset: 3px;
+}
+
+.social_link::after {
+    content: "";
+    display: block;
+    width: 2px;
+    height: 90px;
+    margin: 0px auto;
+    background-color: #749cc0;
+}
+
+
+.title-description h5 {
+    text-shadow: 2px 2px 15px rgb(0 0 0 / 50%);
+    background-image: linear-gradient(transparent calc(75% - 5px), #355cc0 5px);
+    background-size: 0;
+    background-repeat: no-repeat;
+    display: inline;
+    transition: 0.5s ease;
+}
+
+.single-services:hover .title-description h5 {
+    background-size: 100%;
+    cursor: pointer;
+}
+
+.myname-subtitle {
+    position: relative;
+}
+
+.img-hero {
+    background-image: url(../images/hero.png) !important;
+    background-position: calc(100% - 0rem) bottom;
+    background-size: 300px !important;
+    display: block;
+    position: absolute;
+    width: 90%;
+    min-height: 90%;
+    background-repeat: no-repeat;
+}
+
+.resume-about-me {
+    color: #333;
+    padding-bottom: 2em;
+}
+
+.skills-content > div {
+    color: #749cc0;
+}

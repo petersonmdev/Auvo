@@ -1,0 +1,22 @@
+﻿@model PrevisaoClima
+@{
+    var culture = new System.Globalization.CultureInfo("pt-BR");
+}
+
+<div class="col my-lg-3 my-2">
+    <div class="card hover-top">
+        <div class="card-body">
+            <h5 class="card-title text-black">@culture.DateTimeFormat.GetDayName(Model.DataPrevisao.DayOfWeek) </h5>
+            <p class="m-0"><span class="card-title text-black">@Model.DataPrevisao.ToShortDateString() </span></p>
+            <small class="card-title text-black">@Model.Cidade.Nome</small>
+            <div class="weather-day-content py-2">
+                <i class="py-1 text-muted icon-cloud-flash fs-5"></i>
+                <h6 class="card-subtitle pb-1 text-muted">@Model.Clima</h6>
+            </div>
+            <div class="row pt-2 border-top">
+                <span class="flex-fill min-temp"><i class="icon-snow text-muted"></i> Min @Model.TemperaturaMinima ºC</span>
+                <span class="flex-fill max-temp"><i class="icon-sun text-muted"></i> Max @Model.TemperaturaMaxima ºC</span>
+            </div>
+        </div>
+    </div>
+</div>

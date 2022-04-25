@@ -1,0 +1,39 @@
+﻿@model PrevisaoClimaViewModel
+
+<div class="container pt-3 pb-5">
+    <div class="row">
+        <div class="container">
+            <div class="col-12">
+                <h5 class="title pt-3 pb-2">Previsões cadastradas</h5>
+            </div>
+            <div class="week-temp-content row-cols-sm-1 row-cols-1 row-cols-md-2 row-cols-lg-auto row text-center">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Cidade</th>
+                        <th scope="col">Clima</th>
+                        <th scope="col">Temp. Minima</th>
+                        <th scope="col">Temp. Maxima</th>
+                        <th scope="col">Data</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var item in Model.PrevisaoClimaWeek.Select((value, i) => new { i, value })) {
+                        <tr>
+                          <th scope="row">@(item.i+1)</th>
+                          <td>@item.value.Cidade.Nome</td>
+                          <td>@item.value.Clima</td>
+                          <td>@item.value.TemperaturaMinima &deg;C</td>
+                          <td>@item.value.TemperaturaMaxima &deg;C</td>
+                          <td>@item.value.DataPrevisao.ToShortDateString()</td>
+                        </tr>
+                      
+                    }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,31 @@
+﻿@model PrevisaoClimaViewModel
+
+<div class="container pt-3 pb-5">
+    <div class="row">
+        <div class="container">
+            <div class="col-12">
+                <h5 class="title pt-3 pb-2">Previsão de clima para os próximos dias</h5>
+            </div>
+            <div class="week-temp-content row-cols-sm-1 row-cols-1 row-cols-md-2 row-cols-lg-auto row text-center">
+                @foreach (var item in Model.PrevisaoClimaList) {
+                    <div class="col my-lg-3 my-2">
+                        <div class="card hover-top">
+                            <div class="card-body">
+                                <h5 class="card-title text-black">@Html.DisplayFor(modelItem => item.DataPrevisao.DayOfWeek)</h5>
+                                <h6 class="card-title text-black">@Html.DisplayFor(modelItem => item.DataPrevisao)</h6>
+                                <div class="weather-day-content py-2">
+                                    <i class="py-1 text-muted icon-cloud-flash fs-5"></i>
+                                    <h6 class="card-subtitle pb-1 text-muted">@Html.DisplayFor(modelItem => item.Clima)</h6>
+                                </div>
+                                <div class="row pt-2 border-top">
+                                    <span class="flex-fill min-temp"><i class="icon-snow text-muted"></i> Min @Html.DisplayFor(modelItem => item.TemperaturaMinima)ºC</span>
+                                    <span class="flex-fill max-temp"><i class="icon-sun text-muted"></i> Max @Html.DisplayFor(modelItem => item.TemperaturaMaxima)ºC</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

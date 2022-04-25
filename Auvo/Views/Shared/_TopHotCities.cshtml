@@ -1,0 +1,11 @@
+﻿@model PrevisaoClima
+
+<li class="list-group-item flex-row d-flex">
+    <div class="col-7 city-name">
+        <span><strong class="text-black">@ViewData["count"] &deg; </strong>@Model.Cidade.Nome</span>
+    </div>
+    <div class="col-5 d-flex">
+        <span class="flex-fill min-temp text-end"><i class="icon-snow fs-5 text-muted"></i> Min @Model.TemperaturaMinima ºC</span>
+        <span class="flex-fill max-temp text-end"><i class="icon-sun fs-5 text-muted"></i> Max @Model.TemperaturaMaxima ºC</span>
+    </div>
+</li>
